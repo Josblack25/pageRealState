@@ -4,19 +4,13 @@ import tailwind from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  // Debes declarar el output como server para usar el adaptador
-  output: 'server',
-  adapter: vercel(), 
-  
+  // Cambiamos a 'static' para evitar errores de funciones de servidor
+  output: 'static', 
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
   integrations: [react()],
-
   vite: {
     plugins: [tailwind()],
-    ssr: {
-      noExternal: ['lucide-react', '@radix-ui/react-slot']
-    },
-    optimizeDeps: {
-      include: ['lucide-react']
-    }
   }
 });

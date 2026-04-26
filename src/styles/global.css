@@ -1,0 +1,11 @@
+@import "tailwindcss";
+/* 1. Variables y configuración de diseño */
+@import "./theme.css";
+@import "./fonts.css";
+@import "tailwindcss";
+
+/* 3. Estilos personalizados adicionales */
+
+@import './fonts.css';
+@import './theme.css';
+

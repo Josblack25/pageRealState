@@ -6,10 +6,11 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   // Cambiamos a 'static' para evitar errores de funciones de servidor
   output: 'static', 
-  adapter: vercel({
-    webAnalytics: { enabled: true },
-  }),
+
+  adapter: vercel(),
+
   integrations: [react()],
+  
   vite: {
     plugins: [tailwind()],
   }
